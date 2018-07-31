@@ -1,0 +1,104 @@
+﻿<html>
+<head>
+    <style>
+        .accordion-toggle {
+            background-color: #6290C3;
+            color: #1A1B41;
+            cursor: pointer;
+            padding: 1rem;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: .5s;
+        }
+
+            .accordion-toggle:after {
+                content: "\02795";
+                font-size: .875rem;
+                color: #1A1B41;
+                float: right;
+                margin-left: 5px;
+            }
+
+            .accordion-toggle:hover,
+            .active {
+                background-color: #C2E7DA;
+            }
+
+                .active:after {
+                    content: "\2796";
+                }
+
+        .panel {
+            padding: 0 1rem;
+            background-color: #FFF;
+            display: none;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height .3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button class="accordion-toggle">Llama</button>
+    <section class="panel">
+        <p>The llama (/ˈlɑːmə/; Spanish pronunciation: [ˈʎama]) (Lama glama) is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the Pre-Columbian era.</p>
+
+        <p>The height of a full-grown, full-size llama is 1.7 to 1.8 m (5.6 to 5.9 ft) tall at the top of the head, and can weigh between 130 and 200 kg (290 and 440 lb). At birth, a baby llama (called a cria) can weigh between 9 and 14 kg (20 and 31 lb). Llamas typically live for 15 to 25 years, with some individuals surviving 30 years or more.</p>
+
+        <p>They are very social animals and live with other llamas as a herd. The wool produced by a llama is very soft and lanolin-free. Llamas are intelligent and can learn simple tasks after a few repetitions. When using a pack, they can carry about 25 to 30% of their body weight for 8 to 13 km (5–8 miles).</p>
+    </section>
+
+    <button class="accordion-toggle">Walrus</button>
+    <section class="panel">
+        <p>The walrus (Odobenus rosmarus) is a large flippered marine mammal with a discontinuous distribution about the North Pole in the Arctic Ocean and subarctic seas of the Northern Hemisphere. The walrus is the only living species in the family Odobenidae and genus Odobenus. This species is subdivided into three subspecies: the Atlantic walrus (O. r. rosmarus) which lives in the Atlantic Ocean, the Pacific walrus (O. r. divergens) which lives in the Pacific Ocean, and O. r. laptevi, which lives in the Laptev Sea of the Arctic Ocean.</p>
+
+        <p>Adult walrus are easily recognized by their prominent tusks, whiskers, and bulk. Adult males in the Pacific can weigh more than 2,000 kg (4,400 lb)[3] and, among pinnipeds, are exceeded in size only by the two species of elephant seals. Walruses live mostly in shallow waters above the continental shelves, spending significant amounts of their lives on the sea ice looking for benthic bivalve mollusks to eat. Walruses are relatively long-lived, social animals, and they are considered to be a "keystone species" in the Arctic marine regions.</p>
+    </section>
+
+    <button class="accordion-toggle">Narwhal</button>
+    <section class="panel">
+        <p>The narwhal (Monodon monoceros), or narwhale, is a medium-sized toothed whale that possesses a large "tusk" from a protruding canine tooth. It lives year-round in the Arctic waters around Greenland, Canada, and Russia. It is one of two living species of whale in the Monodontidae family, along with the beluga whale. The narwhal males are distinguished by a long, straight, helical tusk, which is an elongated upper left canine. The narwhal was one of many species described by Carl Linnaeus in his publication Systema Naturae in 1758.</p>
+
+        <p>Like the beluga, narwhals are medium-sized whales. For both sexes, excluding the male's tusk, the total body size can range from 3.95 to 5.5 m (13 to 18 ft); the males are slightly larger than the females. The average weight of an adult narwhal is 800 to 1,600 kg (1,760 to 3,530 lb). At around 11 to 13 years old, the males become sexually mature; females become sexually mature at about 5 to 8 years old. Narwhals do not have a dorsal fin, and their neck vertebrae are jointed like those of most other mammals, not fused as in dolphins and most whales.</p>
+    </section>
+    <script>
+        var accordion = document.getElementsByClassName("accordion-toggle");
+
+        for (var i = 0; i < accordion.length; i++) {
+            accordion[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+
+    </script>
+    <script>
+$(document).ready(function() {
+//Preloader
+$(window).on("load", function() {
+preloaderFadeOutTime = 1000;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+});
+</script>
+</body>
+
+</html>
